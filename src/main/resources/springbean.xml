@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+<bean id="user" class="OnlineShoppingApp.User">
+<property name="username" value="AAA"/>
+<property name="email" value="aaa@gmail.com"/>
+<property name="password" value="aaaa@07"/>
+<property name="shipping_address" value="Door no 111, Anna nagar, Chennai"/>
+<property name="billing_address" value="Door no 111, Anna nagar, Chennai"/>
+</bean>
+
+
+<bean id="user1" class="OnlineShoppingApp.User">
+<property name="username" value="BBB"/>
+<property name="email" value="bbb@hotmail.com"/>
+<property name="password" value="b!02!bb"/>
+<property name="shipping_address" value="Door no. 222, KK nagar, Trichy"/>
+<property name="billing_address" value="Door no. 222, KK nagar, Trichy"/>
+</bean>
+
+
+
+<bean id="product1" class="OnlineShoppingApp.Product">
+<property name="product_name" value="rice"/>
+<property name="price" value="75"/>
+<property name="quality_in" value="25"/>
+<property name="imagelocation" value="Door no 111, Anna nagar, Chennai"/>
+
+</bean>
+
+
+<bean id="product2" class="OnlineShoppingApp.Product">
+<property name="product_name" value="Milk"/>
+<property name="price" value="40"/>
+<property name="quality_in" value="5"/>
+<property name="imagelocation" value="Door no 222, KK nagar, Trichy"/>
+
+</bean>
+
+<bean id="product3" class="OnlineShoppingApp.Product">
+<property name="product_name" value="Wheat flour"/>
+<property name="price" value="60"/>
+<property name="quality_in" value="10"/>
+<property name="imagelocation" value="Door no 111, Anna nagar, Chennai"/>
+
+</bean>
+
+
+<bean id="product4" class="OnlineShoppingApp.Product">
+<property name="product_name" value="Dal"/>
+<property name="price" value="120"/>
+<property name="quality_in" value="3"/>
+<property name="imagelocation" value="No 34, Cauvery Nagar, Erode"/>
+</bean>
+
+<bean id="cart1" class="OnlineShoppingApp.Cart">
+<constructor-arg ref="user"/>
+<property name="productList">
+<list>
+<ref bean="product1"/>
+<ref bean="product2"/>
+<ref bean="product3"/>
+<ref bean="product4"/>
+</list>
+
+</property>
+<property name="status" value="true"/>
+<property name="confirmorder" value="true"/>
+<property name="total_amount" value="3035"/>
+</bean>
+
+
+<bean id="order" class="OnlineShoppingApp.Order">
+<property name="cartList">
+<list>
+<ref bean="cart1"/>
+</list>
+</property>
+
+</bean>
+</beans>
